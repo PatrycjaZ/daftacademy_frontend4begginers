@@ -3,17 +3,20 @@
     box-sizing: border-box;
 }
 
-/* usunięcie marginesów */
 body {
     margin: 0;
     padding: 0;
+    background-image: url('./images/background.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1, h2, h3 {
     margin: 0;
 }
 
-/* usunięcie kropek, które domyślnie się pojawiły jako typ listy */
 ul {
     list-style: none;
     margin: 0;
@@ -30,27 +33,79 @@ ul {
     overflow: hidden;
 }
 
-/* SEKCJA POMOCNICZA- ABY ZWIZUALIZOWAĆ GŁÓWNE BLOKI STRONY */
-/* .page-header {
-    background-color: #ffb1b1;
+/*
+######################################
+TYPOGRAFIA
+######################################
+*/
+
+body {
+    color: rgba(204, 200, 255, 0.8);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+    font-weight: normal;
 }
 
-.page-content {
-    background-color: #b0ffb0;
+a {
+    color: #EF008E;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.page-footer {
-    background-color: #7ba3ff;
+/*
+######################################
+PRZYCISKI
+######################################
+*/
+
+.button {
+    padding: 7px 15px;
+    border-radius: 3px;
+    background-color: rgba(204, 200, 255, 0.1);
+    border-color: rgba(204, 200, 255, 0.1);
+    color: rgba(204, 200, 255, 0.8);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    cursor: pointer;
 }
 
-.content-section {
-    background-color: #ca9aca;
+.button--contact {
+    margin-top: 20px;
 }
-.content-section:nth-child(odd) {
-    background-color: #e69fe6;
-} */
 
-/* USTAWIANIE ELEMENTÓW, ABY JEŹDZIŁY Z NAMI */
+/*
+######################################
+FORMULARZE
+######################################
+*/
+
+.form__field {
+    margin-bottom: 10px;
+}
+
+.form__label {
+    display: block;
+    margin-bottom: 9px;
+}
+
+.form__input {
+    display: block;
+    height: 35px;
+    width: 300px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(219, 216, 251, 0.1);
+}
+
+/*
+######################################
+GŁÓWNY LAYOUT STRONY
+######################################
+*/
+
 .page-header {
     position: fixed;
     top: 50px;
@@ -63,194 +118,212 @@ ul {
     left: 50px;
 }
 
+@media (max-width: 900px) {    
+    .page-header {
+        position: static;
+        margin: 20px;
+    }
+
+    .page-footer {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {    
+    .page-header {
+        position: static;
+        margin: 20px;
+    }
+
+    .page-footer {
+        position: static;
+    }
+}
+
+@media (max-width: 360px) {    
+    .page-header {
+        position: static;
+        margin: 20px;
+    }
+
+    .page-footer {
+        position: static;
+    }
+}
+
 /* USTAWIENIE GŁÓWNEJ TREŚCI */
 .page-content {
     margin-left: 220px;
-    padding: 0 50px;
-    text-align: right;
+    padding: 0 10%;
 }
+
+@media (max-width: 900px) {
+    .page-content {
+        margin-left: 0px;
+        padding: 0 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-content {
+        margin-left: 0px;
+        padding: 0 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .page-content {
+        margin-left: 0px;
+        padding: 0 0;
+    }
+}
+
+/*
+######################################
+NAWIGACJA
+######################################
+*/
+
+.page-navigation__items {
+    padding-top: 15px;
+}
+
+.page-navigation__link {
+    line-height: 30px;
+    text-transform: uppercase;
+    letter-spacing: 6.7px;
+}
+
+/*
+######################################
+LINKI DO SOCIAL MEDIA
+######################################
+*/
+
+.social-links__item + .social-links__item {
+    margin-top: 15px;
+}
+
+.social-links__item {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 1200px) {
+    .social-links__item {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .page-footer {
+        margin-bottom: 40px;
+    }
+    
+    .social-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page-footer {
+        margin-bottom: 40px;
+    }
+    
+    .social-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 360px) {
+    .page-footer {
+        margin-bottom: 40px;
+    }
+    
+    .social-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-end;
+        padding: 30px;
+    }
+}
+
+/*
+######################################
+STYLE WSPÓLNE DLA WSZYSTKICH SEKCJI
+######################################
+*/
 
 /* ABY KAŻDA SEKCJA STRONY WYPEŁNIAŁA MINIMUM CAŁĄ WYSOKOŚĆ OKNA PRZEGLĄDARKI */
 .content-section {
-    min-height: 100vh; /* vh = 1% wysokości okna przeglądarki */
-}
-
-/* STRUKTURA STRONY */
-/* ustalenie stałej wysokości nagłówka h2 od razu dla wszystkich sekcji */
-.content-section {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 100vh;
 }
 
 .content-section__header {
-    position: absolute;
-    top: 10vh;
-    right: 0px;
-}
-
-/* 1 SEKCJA - BAND MEMBERS */ 
-.band-members {
-    height: 100%;
-    position: absolute;
-    right: 50%;
-    transform: translate(50%, 0);
-    display: grid; 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-}
-
-.band-members__item {
-    align-self: center;
-    justify-self: center;
-    text-align: left;
-} 
-
-/* 2 SEKCJA- ABOUT */ 
-.about-section img {
-    position: absolute;
-    width: 850px;
-    top: 50%;
-    transform: translate(-100%, -50%);
-    border-top: 5px solid #EC008C;
-}
-
-.about-section__desc {
-    position: absolute;
-    background-color: #25072E;
-    width: 380px;
-    height: 360px;
-    border-bottom: 5px solid #EC008C;
-    padding: 35px 30px 50px 35px;
-    text-align: left;
-    bottom: 20px;
-    right: 750px;
-}
-
-/* 3 SEKCJA- CONCERTS */ 
-.concerts__image {
-    width: 45vh;
-    border-bottom: 5px solid  #EC008C;
-}
-
-.concerts {
-    position: absolute;
-    right: 0%;
-    display: grid;
-    grid-template-columns: repeat(2, 45vh);
-    grid-template-rows: repeat(2, 1fr);
-    top: 20vh;
-    column-gap: 60px;
-    row-gap: 30px;
-}
-
-.concerts__info {
-    display: grid; 
-    grid-template-columns: 25vh 20vh;
-    grid-template-rows: 20px 20px;
-}
-
-.concerts__date {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-    text-align: left;
-}
-
-.concerts__location {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    text-align: left;
-}
-
-.concerts__info .button {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    justify-self: end;
-}  
-
-/* 4 SEKCJA- VIDEO */ 
-#video iframe {
-    position: absolute;
-    margin: 0;
-    top: 50%;
-    transform: translate(-100%, -50%);
-    border-top: 5px solid #EC008C;
-}
-
-/* 5 SEKCJA- PHOTOS */ 
-.gallery .gallery__image {
-    width: 35vh;
-    border-top: 5px solid #EC008C;
-}
-
-.gallery {
-    position: absolute;
-    display: grid; 
-    grid-template-columns: repeat(3, 35vh);
-    grid-template-rows: repeat(3, 1fr);
-    right: 0%;
-    row-gap: 15px;
-    column-gap: 20px;
-    top: 20vh;
-}
-
-/* 6 SEKCJA- CONTACT */
-#contact {
-    height: 100vh;
-    display: grid; 
-    grid-template-columns: 1fr 1fr 30px 1fr 30px;
-    grid-template-rows: 20vh 1fr 30px 1fr 1fr;
-}
-
-#contact .gallery__image {
-    width: 500px;
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-#contact address {
-    grid-column: 4 / 5;
-    grid-row: 2 / 3;
-    text-align: left;
-    align-self: center;
-    justify-self: center;
-}
-
-#contact form {
-    grid-column: 2 / 3;
-    grid-row: 4 / 5;
-    text-align: left;
-}
-
-/* STYLE */
-body {
-    background-image: url("background.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-color: #25072E;
-}
-
-nav a {
-    font-family: 'Open Sans';
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 6.7px;
-    line-height: 2.5;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #EC008C;
-}
-
-h2 {
-    font-family: 'Open Sans';
+    margin-bottom: 60px;
+    color: #EF008E;
     font-size: 28px;
     font-weight: bold;
     letter-spacing: 4.5px;
     text-transform: uppercase;
-    color: #EC008C;
+}
+
+.content-section__body {
+    flex-grow: 1;
+}
+
+@media (max-width: 900px) {
+    .content-section {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    .content-section {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    .content-section {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+/*
+######################################
+SEKCJA "HOME"
+######################################
+*/
+
+.content-section.home-section {
+    align-items: center;
+}
+
+.band-members {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .band-members__name {
-    font-family: 'Open Sans';
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 3.8px;
@@ -259,94 +332,468 @@ h2 {
 }
 
 .band-members__desc {
-    font-family: 'Open Sans';
-    font-size: 13px;
-    font-weight: normal;
     letter-spacing: 3.5px;
     color: #CCC8FF;
     opacity: 0.5;
 }
 
-.about-section__desc-header {
-    font-family: 'Open Sans';
-    font-size: 15px;
-    line-height: 3;
-    font-weight: bold;
-    letter-spacing: 3.8px;
-    text-transform: uppercase;
-    color: #DBD8FB;
+/* Tymczasowo ukrywamy tę sekcję, zajmiemy się nią na następnych zajęciach. */
+/* .band-members__name,
+.band-members__desc {
+    display: none;
+} */
+
+@media (max-width: 900px) {
+    .band-members {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: start;
+    }
+
+    .band-members__item {
+        display: flex;
+        flex-direction: row;
+        max-width: 50%;
+    }
+
+    .band-members__info {
+        align-self: center;
+    }
 }
 
-.about-section__desc-details {
-    font-family: 'Open Sans';
-    font-size: 13px;
-    font-weight: normal;
-    letter-spacing: 1.5px;
+@media (max-width: 600px) {
+    .band-members {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .band-members__item {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+    }
+
+    .band-members__image {
+        max-height: 50vh;
+    }
+
+    .band-members__info {
+        align-self: center;
+    }
+}
+
+@media (max-width: 360px) {
+    .band-members {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+        margin-bottom: 40px;
+    }
+
+    .band-members__item {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+    }
+
+    .band-members__image {
+        max-height: 25vh;
+    }
+
+    .band-members__info {
+        align-self: center;
+    }
+}
+
+/*
+######################################
+SEKCJA "ABOUT"
+######################################
+*/
+
+.about {
+    position: relative;
+    margin-left: 290px;
+    margin-bottom: 115px;
+}
+
+.about__image {
+    max-width: 100%;
+    border-top: 3px solid #EF008E;
+}
+
+.about__desc-header {
+    margin-bottom: 30px;
     color: #CCC8FF;
-    opacity: 0.8;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.about__desc {
+    position: absolute;
+    left: -290px;
+    bottom: -115px;
+    width: 380px;
+    padding: 30px;
+    background-color: #25072e;
+    border-bottom: 3px solid #EF008E;
+}
+
+@media (max-width: 1200px) {
+    .about {
+        position: relative;
+        margin-left: 100px;
+        margin-bottom: 50px;
+    }
+
+    .about__desc {
+        position: absolute;
+        left: -150px;
+        bottom: -200px;
+        width: 380px;
+        padding: 30px;
+        background-color: #25072e;
+        border-bottom: 3px solid #EF008E;
+    }
+}
+
+@media (max-width: 900px) {
+    .about {
+        position: static;
+        margin-left: 0px;
+    }
+
+    .about__image {
+        position: static;
+        width: 100%;
+    }
+
+    .about__desc {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .about {
+        position: static;
+        margin-left: 0px;
+    }
+
+    .about__image {
+        position: static;
+        width: 100%;
+    }
+
+    .about__desc {
+        position: static;
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .about {
+        position: static;
+        margin-left: 0px;
+        margin-bottom: 40px;
+    }
+
+    .about__image {
+        position: static;
+        width: 100%;
+    }
+
+    .about__desc {
+        position: static;
+        width: 100%;
+    }
+}
+
+/*
+######################################
+SEKCJA "CONCERTS"
+######################################
+*/
+
+.concerts {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 55px;
+    row-gap: 45px;
+    margin-bottom: 40px;
+}
+
+.concerts__image {
+    max-width: 100%;
+    border-bottom: 3px solid #EF008E;
+}
+
+.concerts__info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.concerts__info-base {
+    flex-grow: 1;
 }
 
 .concerts__date {
-    font-family: 'Open Sans';
+    margin: 0;
+    color: #CCC8FF;
     font-size: 15px;
     font-weight: bold;
-    letter-spacing: 3.8px;
     text-transform: uppercase;
-    color: #DBD8FB;
+    letter-spacing: 3.8px;
 }
 
 .concerts__location {
-    font-family: 'Open Sans';
-    font-size: 13px;
-    font-weight: normal;
-    letter-spacing: 3.5px;
-    color: #CCC8FF;
-    opacity: 0.5;
+    margin: 0;
+    letter-spacing: 3.8px;
 }
 
-#contact address {
-    font-family: 'Open Sans';
+@media (max-width: 600px) { 
+    .concerts {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .concerts__item {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .concerts__image {
+        max-width: 60%;
+    }
+
+    .concerts__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .concerts__date {
+        margin-left: 30px;
+    }
+
+    .concerts__location {
+        margin-left: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 360px) { 
+    .concerts {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+    }
+
+    .concerts__item {
+        display: flex;
+        flex-direction: row;
+        max-width: 100%;
+    }
+
+    .concerts__image {
+        max-width: 50%;
+    }
+
+    .concerts__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .concerts__date {
+        font-size: 12px;
+        margin-left: 10px;
+    }
+
+    .concerts__location {
+        font-size: 12px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/*
+######################################
+SEKCJA "VIDEO"
+######################################
+*/
+
+.embedded-video {
+    border-top: 3px solid #EF008E;
+}
+
+@media (max-width: 900px) {
+    .embedded-video {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .embedded-video {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .embedded-video {
+        width: 100%;
+    }
+}
+
+/*
+######################################
+SEKCJA "PHOTOS"
+######################################
+*/
+
+.gallery {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.gallery__image {
+    height: 20vh;
+    border-top: 3px solid #EF008E;
+}
+
+@supports (display:grid) {
+    .gallery {
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .gallery__image {
+        max-width: 100%;
+        border-top: 3px solid #EF008E;
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+        justify-items: center;
+        gap: 5px;
+        width:
+    }
+
+    .gallery__image {
+        height: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 5px;
+        width:
+    }
+
+    .gallery__image {
+        height: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .gallery__image {
+        height: 100%;
+    }
+}
+
+/*
+######################################
+SEKCJA "CONTACT"
+######################################
+*/
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.contact__img {
+    max-width: 100%;
+}
+
+.contact__address {
+    padding: 70px;
     font-style: normal;
-    font-size: 13px;
-    font-weight: normal;
-    letter-spacing: 1.5px;
-    color: #CCC8FF;
-    opacity: 0.8;
 }
 
-.form__label {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-size: 13px;
-    font-weight: normal;
-    line-height: 2.5;
-    letter-spacing: 1.5px;
-    color: #CCC8FF;
-    opacity: 0.8;
+.contact__form {
+    flex-basis: 50%;
+    padding-top: 40px;
 }
 
-.form__input {
-    width: 300px;
-    height: 30px;
-    background-color: rgba(204, 200, 255, 0.1);
-    border-radius: 5px;
-    border: 0;
+@media (max-width: 1200px) {
+    .contact__address {
+        padding: 30px;
+        font-style: normal;
+    }
 }
 
-.button {
-    width: 150px;
-    height: 30px;
-    background-color: rgba(204, 200, 255, 0.1);
-    border-radius: 5px;
-    border: 0;
-    font-family: 'Open Sans', semi-bold;
-    font-size: 12px;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    color: #CCC8FF;
+@media (max-width: 900px) {
+    .contact__address {
+        padding: 30px;
+        font-style: normal;
+    }
 }
 
-.social-links__logo {
-    height: 35px;
-    padding: 5px 5px 5px;
+@media (max-width: 600px) {
+    .contact {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .contact__address {
+        order: 3;
+        padding-left: 0;
+    } 
+}
+
+@media (max-width: 360px) {
+    .contact {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .contact__address {
+        padding-left: 0;
+        order: 3;
+    } 
 }
