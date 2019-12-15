@@ -1,70 +1,53 @@
-// ######################################
-// HAMBURGER MENU
-// ######################################
+// Show/hide page navigation
+const menuButton = document.querySelector('#hamburger');
 
-const navButton = document.querySelector('.button-navigation');
+menuButton.addEventListener('click', (e) => {
+    const pageNavigation = document.querySelector('.page-navigation');
+    pageNavigation.classList.toggle('page-navigation--visible');
 
-navButton.addEventListener('click', () => {
-    const navDiv = document.querySelector('.page-navigation__items');
-    navDiv.classList.toggle('visible');
+    const hamburgerFirst = document.querySelector('#hamburger-1');
+    hamburgerFirst.classList.toggle('hamburger-1--invisible');
+
+    const hamburgerSecond = document.querySelector('#hamburger-2');
+    hamburgerSecond.classList.toggle('hamburger-2-transform');
+
+    const hamburgerThird = document.querySelector('#hamburger-3');
+    hamburgerThird.classList.toggle('hamburger-3-transform');
 });
 
-// ######################################
-// KUP BILET
-// ######################################
+// Photos
+const photos = document.querySelector('#photos');
 
-//const container = document.querySelector('.container');
-//const concertButton = document.querySelector('.button');
-
-// const container = document.querySelectorAll('.container');
-// const concertButton = document.querySelectorAll('.button');
-
-//concertButton.addEventListener('click', () => {
- // container.innerHTML = '<p>Have fun!</p>';
-//});
-
-const button1 = document.getElementById('button_1');
-
-button1.addEventListener('click', () => {
-    const container1 = document.getElementById('container_1');
-    container1.innerHTML = '<p>Have fun!</p>';
+photos.addEventListener('mouseout', (e) => {
+    if (e.target.classList.contains('gallery__image')) {
+        const galleryImage = e.target;
+        galleryImage.classList.add('color-animation');
+    }
 });
 
-const button2 = document.getElementById('button_2');
+// Mark ticket as bought
+const concerts = document.querySelector('#concerts');
 
-button2.addEventListener('click', () => {
-    const container2 = document.getElementById('container_2');
-    container2.innerHTML = '<p>Have fun!</p>';
+concerts.addEventListener('click', (e) => {
+    if (e.target.classList.contains('button--buy-ticket')) {
+        const buyTicketButton = e.target;
+        const haveFunText = document.createElement('p');
+        haveFunText.textContent = 'Have fun!';
+
+        const buttonContainer = buyTicketButton.parentElement;
+        buttonContainer.insertBefore(haveFunText, buyTicketButton);
+        buyTicketButton.remove();
+        // OR
+        // buyTicketButton.replaceWith(haveFunText);
+    }
 });
 
-const button3 = document.getElementById('button_3');
+// Log form data
+const contactForm = document.querySelector('.contact__form');
 
-button3.addEventListener('click', () => {
-    const container3 = document.getElementById('container_3');
-    container3.innerHTML = '<p>Have fun!</p>';
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const formObject = Object.fromEntries(formData);
+    console.log(formObject);
 });
-
-const button4 = document.getElementById('button_4');
-
-button4.addEventListener('click', () => {
-    const container4 = document.getElementById('container_4');
-    container4.innerHTML = '<p>Have fun!</p>';
-});
-
-// ######################################
-// FORMULARZ KONTAKTOWY
-// ######################################
-
-var contactForm = document.getElementById('contact-form');
-
-contactForm.onsubmit = function(event) {
-    event.preventDefault();
-
-    var request = new XMLHttpRequest();
-    request.open('POST', 'https://httpbin.org/post', false);
-
-    var formData = new FormData(document.getElementById('contact-form'));
-    request.send(formData);
-
-    console.log(request.response);
-  }
