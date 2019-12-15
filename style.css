@@ -666,10 +666,6 @@ SEKCJA "CONTACT"
     ######################################
     */
 
-    .menu-button {
-        display: block;
-    }
-
     .page-navigation {
         height: 0;
         opacity: 0;
@@ -684,6 +680,7 @@ SEKCJA "CONTACT"
     }
 
     .menu-button {
+        display: block;
         height: 35px;
         width: 40px;
         background-color: transparent;
