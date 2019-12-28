@@ -5,7 +5,6 @@
 body {
     margin: 0;
     padding: 0;
-
     background-color: #25072E;
     background-image: url('./images/background.svg');
     background-size: cover;
@@ -49,6 +48,7 @@ body {
 a {
     color: #EF008E;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /*
@@ -137,6 +137,12 @@ NAWIGACJA
     line-height: 30px;
     text-transform: uppercase;
     letter-spacing: 6.7px;
+    filter: saturate(0.5);
+    transition-property: filter;
+}
+
+.page-navigation__link:hover {
+    filter: saturate(1);
 }
 
 /*
@@ -145,7 +151,6 @@ LINKI DO SOCIAL MEDIA
 ######################################
 */
 
-
 .social-links__item + .social-links__item {
     margin-top: 15px;
 }
@@ -153,6 +158,12 @@ LINKI DO SOCIAL MEDIA
 .social-links__img {
     width: 20px;
     height: 20px;
+    filter: saturate(0.5);
+    transition-property: filter;
+}
+
+.social-links__img:hover {
+    filter: saturate(1);
 }
 
 /*
@@ -198,9 +209,26 @@ SEKCJA "HOME"
     align-items: center;
 }
 
-.band-members__name,
+.band-members__name {
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3.8px;
+    text-transform: uppercase;
+    color: #DBD8FB;
+}
+
 .band-members__desc {
-    display: none;
+    letter-spacing: 3.5px;
+    color: rgba(204, 200, 255, 0.5);
+}
+
+.band-members__image {
+    filter: saturate(0.5);
+    transition-property: filter;
+}
+
+.band-members__image:hover {
+    filter: saturate(1);
 }
 
 /*
@@ -371,7 +399,6 @@ SEKCJA "PHOTOS"
     animation-timing-function: linear;
 }
 
-
 .gallery__image:hover {
     z-index: 5;
     animation-name: sizeImage;
@@ -477,6 +504,10 @@ SEKCJA "CONTACT"
         text-align: center;
     }
 
+    .page-navigation__link {
+        filter: saturate(1);
+    }
+
     /*
     ######################################
     LINKI DO SOCIAL MEDIA
@@ -494,6 +525,7 @@ SEKCJA "CONTACT"
     .social-links__img {
         width: 32px;
         height: 32px;
+        filter: saturate(1);
     }
 
     /*
@@ -540,6 +572,7 @@ SEKCJA "CONTACT"
         height: 175px;
         margin-bottom: 16px;
         object-fit: contain;
+        filter: saturate(1);
     }
 
     .band-members__name,

@@ -37,8 +37,6 @@ concerts.addEventListener('click', (e) => {
         const buttonContainer = buyTicketButton.parentElement;
         buttonContainer.insertBefore(haveFunText, buyTicketButton);
         buyTicketButton.remove();
-        // OR
-        // buyTicketButton.replaceWith(haveFunText);
     }
 });
 
