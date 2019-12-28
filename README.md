@@ -25,7 +25,7 @@ Strona została stworzona na potrzeby kursu Front-end 4 Beginners organizowego p
 
 8.	Zakodowanie wersji designu na telefony o wymiarach 360x640px 
 
-## JAVA SCRIPT- FUNKCJE
+## JAVA SCRIPT- EVENTY
 
 9.	Napisanie funkcji, która po kliknięciu w przycisk „Kup bilet” w sekcji „Concerts” usunie przycisk i w jego miejscu wyświetli tekst „Have fun!”
 10.	Napisanie funkcji, która na evencie „submit” formularza kontaktowego wyloguje wpisane wartości do konsoli.
