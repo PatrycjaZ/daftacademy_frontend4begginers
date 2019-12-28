@@ -33,4 +33,4 @@ Strona została stworzona na potrzeby kursu Front-end 4 Beginners organizowego p
 ## TRANZYCJE I ANIMACJE
 
 11.	Zaprojektowanie hamburger menu dla ekranu 360x640px- przycisku pokazującego i ukrywającego nawigację. Przycisk ostylowano przy pomocy animacji. 
-12.	Dodanie animacji w sekcji „Photos” przy interakcji z kursorem (przy najechaniu kursorem na zdjęcie i przy opuszczeniu obrazka)
+12.	Dodanie animacji w sekcji „Photos” przy interakcji z kursorem (przy najechaniu kursorem na obrazek i przy opuszczeniu obrazka)
